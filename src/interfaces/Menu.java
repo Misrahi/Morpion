@@ -43,7 +43,7 @@ public class Menu extends JFrame {
 		deuxJoueurs.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Vous allez jouez contre un Homme!!!!");
+				System.out.println("Vous allez jouez contre un homo sapiens sapiens");
 				setVisible(false);
 					}
 		});
@@ -51,7 +51,7 @@ public class Menu extends JFrame {
 		quitter.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
 				System.out.println("jeu quitté");
-				java.lang.System.exit(0);
+				System.exit(0);
 	
 			}
 
@@ -60,8 +60,10 @@ public class Menu extends JFrame {
 		unJoueur.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Vous allez jouez contre une intelligence supérieure!!!!");
+				System.out.println("Vous allez jouez contre une intelligence artificielle");
 				setVisible(false);	
+				Difficult frame = new Difficult();
+				frame.setVisible(true);
 			}
 		});
 	}
