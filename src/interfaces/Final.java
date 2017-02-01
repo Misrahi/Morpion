@@ -21,11 +21,17 @@ public class Final extends JFrame {
 		setLocationRelativeTo(null);
 		
 		boolean victoire = false;
+		boolean ia=false;
+		boolean equal=true;
 		
+		if (equal==true)
+			v="Égalité ! :/";
 		if (victoire==true)
-			v="Victoire ! :D";
+			v="Victoire pour le joueur 1 !";
+		else if (ia==true)
+			v="Victoire pour l'IA !";
 		else
-			v="Défaite ! D:";
+			v="Victoire pour le joueur 2 !";
 		
 		JPanel bouton1 = new JPanel();
 		JPanel bouton2 = new JPanel();
