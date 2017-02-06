@@ -13,25 +13,25 @@ import javax.swing.JPanel;
 public class Final extends JFrame {
 	private String v; //variable victoire/ défaite
 	
-	public Final(){
+	public Final(int e, boolean ia){
 		setSize(200, 140);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Morpion");
 		setResizable(false);
 		setLocationRelativeTo(null);
 		
-		boolean victoire = false;
-		boolean ia=false;
-		boolean equal=true;
-		
-		if (equal==true)
-			v="Égalité ! :/";
-		if (victoire==true)
+		if (e==0)
+			v="Égalité :/";
+		else if(ia==true)
+			if(e==1)
+				v="Vous avez gagné !";
+			else
+				v="Victoire pour l'IA !";
+		else if(e==1)
 			v="Victoire pour le joueur 1 !";
-		else if (ia==true)
-			v="Victoire pour l'IA !";
 		else
 			v="Victoire pour le joueur 2 !";
+		
 		
 		JPanel bouton1 = new JPanel();
 		JPanel bouton2 = new JPanel();
@@ -39,22 +39,9 @@ public class Final extends JFrame {
 		JLabel label = new JLabel(v); //texte
 		JButton rejouer = new JButton ("Rejouer");
 		JButton quitter = new JButton ("Quitter");
-		/*Container box=Box.createVerticalBox();
-		Container boite=Box.createHorizontalBox();*/
-		
-		//ajout
-		/*box.add(Box.createVerticalGlue());
-		box.add(label);
-		box.add(Box.createVerticalGlue());
-		box.add(rejouer);
-		box.add(Box.createVerticalGlue());
-		box.add(quitter);*/
 		bouton1.add(rejouer);
 		bouton2.add(quitter);
 		texte.add(label);
-		/*this.add(texte, BorderLayout.NORTH);
-		this.add(box, BorderLayout.CENTER);
-		this.add(quitter, BorderLayout.SOUTH);*/
 		this.setLayout(new GridLayout(3,1));
 		this.add(texte);
 		this.add(bouton1);

@@ -45,16 +45,16 @@ public class Menu extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Vous allez jouez contre un homo sapiens sapiens");
 				setVisible(false);
-					}
+				Grille frame=new Grille(0);
+				frame.setVisible(true);
+				}
 		});
 	
 		quitter.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
 				System.out.println("jeu quitté");
 				System.exit(0);
-	
 			}
-
 		});
 		
 		unJoueur.addActionListener(new ActionListener() { 
@@ -64,9 +64,12 @@ public class Menu extends JFrame {
 				setVisible(false);	
 				Difficult frame = new Difficult();
 				frame.setVisible(true);
+				
 			}
 		});
 	}
+	
+
 }
 		
 	

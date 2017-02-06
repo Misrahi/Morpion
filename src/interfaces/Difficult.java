@@ -48,15 +48,17 @@ public class Difficult extends JFrame {
 		izy.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Vous allez jouez contre un homo sapiens sapiens");
+				System.out.println("Vous allez jouez contre une IA nulle");
 				setVisible(false);
-					}
+				IaEasy frame=new IaEasy(1);
+				frame.setVisible(true);
+			}
 		});
 		
 		medium.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Vous allez jouez contre une intelligence artificielle");
+				System.out.println("Vous allez jouez contre une IA moyenne");
 				setVisible(false);	
 			}
 		});
@@ -64,7 +66,7 @@ public class Difficult extends JFrame {
 		hard.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Vous allez jouez contre une intelligence artificielle");
+				System.out.println("Vous allez jouez contre une IA OP");
 				setVisible(false);	
 			}
 		});
