@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 public class Final extends JFrame {
 	private String v; //variable victoire/ défaite
 	
-	public Final(int e, boolean ia){
-		setSize(200, 140);
+	public Final(int e, boolean ia,Grille g){
+		setSize(220, 140);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Morpion");
 		setResizable(false);
@@ -55,6 +55,7 @@ public class Final extends JFrame {
 				Menu frame = new Menu();
 				frame.setVisible(true);
 				setVisible(false);
+				g.setVisible(false);
 			}
 		});
 	

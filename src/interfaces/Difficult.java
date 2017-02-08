@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class Difficult extends JFrame {
 	public Difficult(){
-		setSize(200, 200);
+		setSize(220, 200);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Morpion");
 		setResizable(false);
@@ -50,7 +50,7 @@ public class Difficult extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Vous allez jouez contre une IA nulle");
 				setVisible(false);
-				IaEasy frame=new IaEasy(1);
+				IaEasy frame=new IaEasy(true);
 				frame.setVisible(true);
 			}
 		});
@@ -60,6 +60,8 @@ public class Difficult extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Vous allez jouez contre une IA moyenne");
 				setVisible(false);	
+				IaMedium frame=new IaMedium(true);
+				frame.setVisible(true);
 			}
 		});
 		
@@ -68,13 +70,15 @@ public class Difficult extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Vous allez jouez contre une IA OP");
 				setVisible(false);	
+				IaHard frame=new IaHard(true);
+				frame.setVisible(true);
 			}
 		});
 	
 		quitter.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0){
 				System.out.println("jeu quitté");
-				System.exit(0);	
+				System.exit(0);
 			}
 		});
 	}

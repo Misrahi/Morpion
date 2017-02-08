@@ -12,13 +12,13 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class Menu extends JFrame {
 	public Menu(){
-		setSize(200, 180);
+		setSize(220, 140);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Morpion");
 		setResizable(false);
 		setLocationRelativeTo(null);
 		
-		JLabel label = new JLabel("Morpion"); //texte
+		JLabel label = new JLabel("Combien êtes-vous ?"); //texte
 		JPanel panel = new JPanel(); //conteneur label
 		JPanel bouton = new JPanel();//conteneur bouton 1 et 2 
 		JPanel bouton1 = new JPanel();//conteneur 1 joueur
@@ -45,7 +45,7 @@ public class Menu extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Vous allez jouez contre un homo sapiens sapiens");
 				setVisible(false);
-				Grille frame=new Grille(0);
+				Grille frame=new Grille(false);
 				frame.setVisible(true);
 				}
 		});

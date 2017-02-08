@@ -12,13 +12,13 @@ import jeu.Clic;
 import jeu.Conditions;
 
 @SuppressWarnings("serial")
-public class IaEasy extends Grille {
+public class IaHard extends Grille {
 	private int[] b={0,0,0,0,0,0,0,0,0};
 	private int compt=0;
 	private Clic clic=new Clic();
 	private boolean v=false;
 	
-	public IaEasy(boolean ia){
+	public IaHard(boolean ia){
 		super(ia);
 		for(int i=0;i<9;i++){
 			gril.get(i).addActionListener(new MyActionListenerIA(i, gril,this));
@@ -34,7 +34,7 @@ public class IaEasy extends Grille {
 		Random r=new Random();
 		Grille frame;
 		
-		public MyActionListenerIA(int k, ArrayList<JButton> gril, Grille frame){
+		public MyActionListenerIA(int k, ArrayList<JButton> gril,Grille frame){
 			this.k=k;
 			this.gril=gril;
 			this.frame=frame;
@@ -51,8 +51,6 @@ public class IaEasy extends Grille {
 				compt++;
 				if(compt==9 && Conditions.testV(clic.getCases())[3]==-1){
 					Final fin=new Final(0,true,frame);
-					for(int i=0;i<9;i++)
-						b[i]=1;
 					fin.setVisible(true);
 					v=true;
 				}
@@ -68,9 +66,15 @@ public class IaEasy extends Grille {
 				}
 		
 				if(v!=true){
-					do{
-						j=r.nextInt(8);
-					}while(b[j]==1);
+					if(Conditions.testW(clic.getCases())!=-1){
+						j=Conditions.testW(clic.getCases());
+					}else if(Conditions.testE(clic.getCases())!=-1){
+						j=Conditions.testE(clic.getCases());
+					}else{
+						do{
+							j=r.nextInt(8);
+						}while(b[j]==1);	
+					}
 					clic.setI(j);
 					b[j]=1;
 					gril.get(j).setText("X");
@@ -79,8 +83,7 @@ public class IaEasy extends Grille {
 					compt++;
 					if(compt==9 && Conditions.testV(clic.getCases())[3]==-1){
 						Final fin=new Final(0,true,frame);
-						for(int i=0;i<9;i++)
-							b[i]=1;
+						setVisible(false);
 						fin.setVisible(true);
 					}
 					if(Conditions.testV(clic.getCases())[3]==1){
